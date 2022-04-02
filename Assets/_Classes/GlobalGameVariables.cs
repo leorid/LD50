@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : ProjectileBase 
+namespace JL
 {
-
-	public void Update()
+	public static class GlobalGameVariables
 	{
-		
+		public static Vector2 playerPos;
 	}
 }
