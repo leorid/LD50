@@ -44,7 +44,8 @@ namespace JL
 			Vector2 vec = (Vector2)transform.position - lastPosition;
 			hit = Physics2D.Raycast(lastPosition,
 								vec,
-								vec.magnitude);
+								vec.magnitude,
+								mask);
 
 			lastPosition = transform.position;
 

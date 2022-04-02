@@ -9,8 +9,8 @@ namespace JL
 		public int health = 1;
 
 		public float detectRange = 15;
+		public Vector2 wantedFireDistance = new Vector2(4, 6);
 		public float fireRange = 8;
-		public float meleeRange = 1.5f;
 		public float lookRotSpeed = 10;
 		public float acceleration = 10;
 		public float moveSpeed = 3;
@@ -25,11 +25,13 @@ namespace JL
 		Vector2 moveVec;
 		Vector2 wantedRotation;
 
+		public float fireRate = 0.5f;
+		float lastFireTime;
+
 		[Header("Info")]
 		[SerializeField] bool playerSpotted;
 		[SerializeField] bool inDetectionRange;
 		[SerializeField] bool inFireRange;
-		[SerializeField] bool inMeleeRange;
 
 		void Awake()
 		{
@@ -57,26 +59,33 @@ namespace JL
 						playerSpotted = true;
 					}
 				}
+				lastFireTime = Time.time;
 			}
 			else
 			{
-				if (inMeleeRange)
+				if (inFireRange && Time.time - lastFireTime > fireRate)
 				{
-					// display slash sprite and cause damage
-				}
-				else if (inFireRange)
-				{
+					lastFireTime = Time.time;
 					WeaponInput weaponInput = new WeaponInput()
 					{
+						lmbDown = true,
 						lmbHeld = true,
 					};
 					weaponController.GetInput(weaponInput);
 				}
-				else if (inDetectionRange)
+
+				// go to wanted distance
+				if (playerDst < wantedFireDistance.x)
+				{
+					moveVec = -vec.normalized;
+				}
+				else if(playerDst > wantedFireDistance.y)
 				{
 					moveVec = vec.normalized;
 				}
-				else
+
+				// out of range
+				if (!inDetectionRange)
 				{
 					playerSpotted = false;
 				}
@@ -87,7 +96,6 @@ namespace JL
 		{
 			inDetectionRange = playerDst < detectRange;
 			inFireRange = playerDst < fireRange;
-			inMeleeRange = playerDst < meleeRange;
 		}
 
 		void FixedUpdate()
@@ -139,8 +147,6 @@ namespace JL
 			Gizmos.DrawWireSphere(transform.position, detectRange);
 			Gizmos.color = Color.red;
 			Gizmos.DrawWireSphere(transform.position, fireRange);
-			Gizmos.color = Color.red;
-			Gizmos.DrawWireSphere(transform.position, meleeRange);
 			Gizmos.color = col;
 		}
 	}

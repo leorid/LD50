@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2253977633435324929}
   - component: {fileID: 2600151750791303739}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,8 +138,11 @@ MonoBehaviour:
   impactEffectBlood: {fileID: 7360393999719649875, guid: 7408c8c1c3799714e91a6afa311922c8,
     type: 3}
   impulseSource: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
   damage: 1
-  speed: 40
+  speed: 20
   trailRenderer: {fileID: 2253977634544793226}
   screenshake: 0.02
 --- !u!114 &2600151750791303739
@@ -269,7 +272,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.05
+  m_Time: 0.1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.3
