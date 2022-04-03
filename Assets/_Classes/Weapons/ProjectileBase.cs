@@ -16,6 +16,9 @@ namespace JL
 		public GameObject impactEffectBlood;
 		public CinemachineImpulseSource impulseSource;
 		public LayerMask mask;
+		public AudioClip hitEnemySound;
+		public AudioClip hitPlayerSound;
+		public AudioClip hitWallSound;
 
 		float startTime;
 
@@ -56,7 +59,11 @@ namespace JL
 		protected void SpawnImactEffect(Vector2 pos, Vector2 fwd, Collider2D col)
 		{
 			GameObject effect;
-			if (col.CompareTag("Enemy"))
+			if (col.CompareTag("Enemy") && hitEnemySound)
+			{
+				AudioSource.PlayClipAtPoint(hitEnemySound, transform.position);
+			}
+			if (col.CompareTag("Enemy") || col.CompareTag("Player"))
 			{
 				effect = impactEffectBlood;
 			}

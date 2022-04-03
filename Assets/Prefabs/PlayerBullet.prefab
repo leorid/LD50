@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLifetime: 20
+  damage: 1
   impactEffectWall: {fileID: 5921931533285119071, guid: 43acb1e0fb7b8504fa8de05b5445ab72,
     type: 3}
   impactEffectBlood: {fileID: 7360393999719649875, guid: 7408c8c1c3799714e91a6afa311922c8,
@@ -141,7 +142,9 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 0
-  damage: 1
+  hitEnemySound: {fileID: 8300000, guid: 670ceb9aefa49724ca2568de62e15435, type: 3}
+  hitPlayerSound: {fileID: 8300000, guid: 4cac53b6beed58848acf3dc29b9538b5, type: 3}
+  hitWallSound: {fileID: 8300000, guid: 579fdf4bc3d7f7b4c9058af039052bb9, type: 3}
   speed: 40
   trailRenderer: {fileID: 2253977634544793226}
   screenshake: 0.02

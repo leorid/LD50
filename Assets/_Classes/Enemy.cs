@@ -172,7 +172,7 @@ namespace JL
 				Destroy(gameObject);
 				GameObject dead = Instantiate(deadEnemy,
 					transform.position,
-					Quaternion.Euler(0, 0, 180) * transform.rotation,
+					Quaternion.Euler(0, 0, 180) * rotationObject.rotation,
 					transform.parent);
 			}
 		}

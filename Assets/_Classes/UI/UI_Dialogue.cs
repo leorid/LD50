@@ -11,7 +11,7 @@ namespace JL
 
 		public static void GetDialogue(DialogueEntry dialogueEntry)
 		{
-			if(dialogueEntry == null)
+			if (dialogueEntry == null)
 			{
 				dialogueBox.style.display = DisplayStyle.None;
 				return;
@@ -45,13 +45,16 @@ namespace JL
 
 		private void Update()
 		{
-			if(currentDialogue != null)
+			if (currentDialogue != null)
 			{
 				if (!cam) cam = Camera.main;
-				Vector3 pos = cam.WorldToScreenPoint(currentDialogue.target.position);
-				pos.z = 0;
-				pos.y = Screen.height - pos.y;
-				dialogueBox.transform.position = pos;
+				if (currentDialogue.target)
+				{
+					Vector3 pos = cam.WorldToScreenPoint(currentDialogue.target.position);
+					pos.z = 0;
+					pos.y = Screen.height - pos.y;
+					dialogueBox.transform.position = pos;
+				}
 			}
 		}
 	}

@@ -15,15 +15,23 @@ namespace JL
 		public Transform muzzlePos;
 		[HideInInspector]
 		public WeaponController weaponController;
+		public AudioClip audioClip;
 
 		public float fireRate = 0.1f;
 		float lastFireTime = 0;
+
+		AudioSource source;
 
 		public virtual void Init()
 		{
 			impulseSource = GetComponentInParent<CinemachineImpulseSource>();
 			playerRB = GetComponentInParent<Rigidbody2D>();
 			weaponController = GetComponentInParent<WeaponController>();
+
+			if (!TryGetComponent(out source))
+			{
+				source = gameObject.AddComponent<AudioSource>();
+			}
 		}
 
 		public void GetInputs(WeaponInput fireInputs)
@@ -40,6 +48,8 @@ namespace JL
 			if (Time.time - lastFireTime >= fireRate)
 			{
 				lastFireTime = Time.time;
+
+				if (audioClip) source.PlayOneShot(audioClip);
 
 				playerRB.AddForce(-transform.up * shootImpulse, ForceMode2D.Impulse);
 				FireInternal();

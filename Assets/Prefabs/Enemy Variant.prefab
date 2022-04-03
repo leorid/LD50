@@ -177,6 +177,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 715317102, guid: 3aab1b8daceb2c747bbb386b7df9d7d6, type: 3}
+      propertyPath: m_Pitch
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 715317102, guid: 3aab1b8daceb2c747bbb386b7df9d7d6, type: 3}
+      propertyPath: Priority
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058100494, guid: 3aab1b8daceb2c747bbb386b7df9d7d6, type: 3}
+      propertyPath: m_Pitch
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058100494, guid: 3aab1b8daceb2c747bbb386b7df9d7d6, type: 3}
+      propertyPath: Priority
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453030376, guid: 3aab1b8daceb2c747bbb386b7df9d7d6, type: 3}
+      propertyPath: m_Pitch
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453030376, guid: 3aab1b8daceb2c747bbb386b7df9d7d6, type: 3}
+      propertyPath: Priority
+      value: 140
+      objectReference: {fileID: 0}
     - target: {fileID: 52538951658724568, guid: 3aab1b8daceb2c747bbb386b7df9d7d6,
         type: 3}
       propertyPath: m_Layer
