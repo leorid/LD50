@@ -17,6 +17,7 @@ namespace JL
 		public float rotationSpeed = 20;
 		public GameObject deadEnemy;
 		public WeaponController weaponController;
+		public Transform rotationObject;
 		public LayerMask mask;
 
 		Rigidbody2D _rb;
@@ -150,12 +151,16 @@ namespace JL
 		void RotateTo(Vector2 lookVec)
 		{
 			lookVec.Normalize();
-			float wantedRotation = Vector2.SignedAngle(Vector2.up, lookVec);
 
-			_rb.rotation = Mathf.MoveTowardsAngle(
-				  _rb.rotation,
+			float currentRotation = Vector2.SignedAngle(Vector2.up, rotationObject.up);
+			float wantedRotation = Vector2.SignedAngle(Vector2.up, lookVec);
+			float rot = Mathf.MoveTowardsAngle(
+				  currentRotation,
 				  wantedRotation,
 				  rotationSpeed * Time.fixedDeltaTime);
+
+			rotationObject.rotation = Quaternion.Euler(0, 0, rot);
+
 		}
 
 		public void Damage(DamageInfo damageInfo)
@@ -165,10 +170,10 @@ namespace JL
 			{
 				// die
 				Destroy(gameObject);
-				Instantiate(deadEnemy,
+				GameObject dead = Instantiate(deadEnemy,
 					transform.position,
 					Quaternion.Euler(0, 0, 180) * transform.rotation,
-					HolderManager.Get(deadEnemy));
+					transform.parent);
 			}
 		}
 

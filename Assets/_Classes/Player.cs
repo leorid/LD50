@@ -7,6 +7,7 @@ namespace JL
 	public class Player : MonoBehaviour
 	{
 		Rigidbody2D _rb;
+
 		public float moveSpeed;
 		public float acceleration = 10;
 		public Transform rotationTransform;
@@ -15,24 +16,38 @@ namespace JL
 		public WeaponController weaponController;
 		public LineRenderer aimLine;
 		public LayerMask mask;
+		public GameObject canInteractIcon;
+		public UI_HealthBar healthBar;
+		public UI_DeathScreen deathScreen;
 
-		public int health = 20;
+		public int health;
+		public int maxHealth = 20;
 
 		Vector2 moveInput;
 		Vector3 mouseWorldPos;
 
 		List<Collider2D> _colCache = new List<Collider2D>();
 
+		public static System.Action RespawnAction;
+
 		void Start()
 		{
 			_rb = GetComponent<Rigidbody2D>();
+
+			RespawnAction = Respawn;
 		}
 
 		void Update()
 		{
+			if (health < 0)
+			{
+				return;
+			}
 			moveInput = new Vector2(
-				Input.GetAxis("Horizontal"),
-				Input.GetAxis("Vertical"));
+			Input.GetAxis("Horizontal"),
+			Input.GetAxis("Vertical"));
+
+			if (moveInput.magnitude > 1) moveInput.Normalize();
 
 			WeaponInput weaponInput = new WeaponInput()
 			{
@@ -44,22 +59,20 @@ namespace JL
 
 			mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-			if (Input.GetKeyDown(KeyCode.E))
+			// weapon inputs
+			if (Input.GetKeyDown(KeyCode.Alpha1))
 			{
-				_colCache.Clear();
-				int hitCount = Physics2D.OverlapCircle(transform.position, 2, new ContactFilter2D()
-				{
-					layerMask = ~0,
-					useTriggers = true,
-				}, _colCache);
-				for (int i = 0; i < hitCount; i++)
-				{
-					if (!_colCache[i]) continue;
-					_colCache[i].gameObject.SendMessage("Interact",
-						SendMessageOptions.DontRequireReceiver);
-				}
+				weaponController.SetWeapon(1);
 			}
-
+			if (Input.GetKeyDown(KeyCode.Alpha2))
+			{
+				weaponController.SetWeapon(2);
+			}
+			if (Input.GetKeyDown(KeyCode.Alpha3))
+			{
+				weaponController.SetWeapon(3);
+			}
+			// weapon scroll wheel
 			if (Input.GetAxis("Mouse ScrollWheel") > 0.01f)
 			{
 				weaponController.PreviousWeapon();
@@ -71,6 +84,8 @@ namespace JL
 			GlobalGameVariables.playerPos = transform.position;
 
 			RotateToMouse();
+
+			CheckInteractables();
 		}
 		void FixedUpdate()
 		{
@@ -90,7 +105,7 @@ namespace JL
 		void RotateToMouse()
 		{
 			Vector2 tempMouseWorldPos = mouseWorldPos;
-			if (weaponController.currentWeapon)
+			if (weaponController.currentWeapon && !weaponController.isNoWeapon)
 			{
 				Vector2 muzzlePos =
 					weaponController.currentWeapon.muzzlePos.position - transform.position;
@@ -107,16 +122,76 @@ namespace JL
 
 		void UpdateAimLine()
 		{
-			Vector2 muzzlePos = transform.position + rotationTransform.up;
-			if (weaponController.currentWeapon)
+			if (weaponController.currentWeapon && !weaponController.isNoWeapon)
 			{
-				muzzlePos = weaponController.currentWeapon.muzzlePos.position;
+				aimLine.enabled = true;
+				Vector2 muzzlePos = weaponController.currentWeapon.muzzlePos.position;
+				Vector2 endPos = muzzlePos + (Vector2)rotationTransform.up * 20;
+				RaycastHit2D aimHit = Physics2D.Raycast(muzzlePos, rotationTransform.up);
+				if (aimHit.collider) endPos = aimHit.point;
+				aimLine.SetPosition(0, muzzlePos);
+				aimLine.SetPosition(1, endPos);
 			}
-			Vector2 endPos = muzzlePos + (Vector2)rotationTransform.up * 20;
-			RaycastHit2D aimHit = Physics2D.Raycast(muzzlePos, rotationTransform.up);
-			if (aimHit.collider) endPos = aimHit.point;
-			aimLine.SetPosition(0, muzzlePos);
-			aimLine.SetPosition(1, endPos);
+			else
+			{
+				aimLine.enabled = false;
+			}
+		}
+
+		void CheckInteractables()
+		{
+			_colCache.Clear();
+			int hitCount = Physics2D.OverlapCircle(transform.position, 2, new ContactFilter2D()
+			{
+				layerMask = ~0,
+				useTriggers = true,
+			}, _colCache);
+
+			bool eKeyDown = Input.GetKeyDown(KeyCode.E);
+			bool anyInteractable = false;
+
+			for (int i = 0; i < hitCount; i++)
+			{
+				if (!_colCache[i]) continue;
+
+				if (_colCache[i].TryGetComponent(out InteractableBase interactable))
+				{
+					anyInteractable = true;
+					if (eKeyDown)
+					{
+						interactable.OnInteract();
+
+						if (_colCache[i].TryGetComponent(out WeaponPickup weaponPickup))
+						{
+							weaponController.SetWeaponUnlocked(weaponPickup.weaponIndex);
+							weaponPickup.Pickup();
+						}
+					}
+				}
+			}
+
+			canInteractIcon.SetActive(anyInteractable);
+		}
+
+		public void Damage(DamageInfo damageInfo)
+		{
+			health -= damageInfo.damage;
+
+			if (health < 0)
+			{
+				deathScreen.Show();
+			}
+
+			float normalized = health / (float)maxHealth;
+			healthBar.HealthChanged(normalized);
+		}
+
+		public void Respawn()
+		{
+			health = maxHealth;
+			healthBar.HealthChanged(1);
+			transform.position = Vector3.zero;
+			weaponController.LockAll();
 		}
 	}
 }

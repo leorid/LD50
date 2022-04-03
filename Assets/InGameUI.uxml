@@ -1,0 +1,30 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="DialogueRoot" picking-mode="Ignore" style="width: 100%; height: 100%;">
+        <ui:VisualElement name="DialogueBox" style="translate: 332px 317px; position: absolute;">
+            <ui:VisualElement picking-mode="Ignore" style="padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; background-color: rgb(31, 31, 31); position: relative; transform-origin: bottom; left: -50%; top: -100%;">
+                <ui:VisualElement picking-mode="Ignore" style="position: absolute; left: 50%; bottom: 0;">
+                    <ui:VisualElement picking-mode="Ignore" style="left: -5px; width: 20px; height: 20px; top: 20px; background-image: url(&apos;project://database/Assets/Sprites/Triangle.png?fileID=2800000&amp;guid=dbf105ff1cd39fc4dabc8dfccbbf5e40&amp;type=3#Triangle&apos;); -unity-background-image-tint-color: rgb(31, 31, 31);" />
+                </ui:VisualElement>
+                <ui:Label text="Can be a super long text and I hope it will wrap around like I imagined this and above multiple lines like it shouls" display-tooltip-when-elided="true" name="DialogueLabel" picking-mode="Ignore" style="-unity-font: url(&apos;project://database/Assets/Sprites/Retron2000.ttf?fileID=12800000&amp;guid=9124fbc01cc2e404fba4981fefbb45e6&amp;type=3#Retron2000&apos;); -unity-font-definition: url(&apos;project://database/Assets/Sprites/Retron2000%20SDF%201.asset?fileID=11400000&amp;guid=89ab27c54499e254ca29704f71140cc0&amp;type=2#Retron2000 SDF 1&apos;); -unity-text-align: upper-center; max-width: 200px; white-space: normal; color: rgb(231, 231, 231);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Health" picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%;">
+        <ui:VisualElement picking-mode="Ignore" style="width: 300px; height: 40px; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; background-color: rgb(53, 53, 53); margin-left: 30px; margin-right: 30px; margin-top: 30px; margin-bottom: 30px;">
+            <ui:VisualElement name="HealthBar" picking-mode="Ignore" style="width: 100%; height: 100%; background-color: rgb(255, 0, 0);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="WeaponIcon" style="background-color: rgb(255, 255, 255); flex-shrink: 1; position: absolute; top: 100px;">
+            <ui:VisualElement name="NoWeapon" />
+            <ui:VisualElement name="PistolIcon" style="background-image: url(&apos;project://database/Assets/Sprites/PistolIcon.png?fileID=2800000&amp;guid=f370021bf06f5ef4282150c00823a98e&amp;type=3#PistolIcon&apos;); width: 107px; height: 73px; display: none;" />
+            <ui:VisualElement name="Shotgun" style="background-image: url(&apos;project://database/Assets/Sprites/ShotgunIcon.png?fileID=2800000&amp;guid=b4c6f87f002be874e9ba72f034b0925c&amp;type=3#ShotgunIcon&apos;); width: 174px; height: 108px; margin-top: -25px; margin-bottom: -15px; display: none;" />
+            <ui:VisualElement name="SMG" style="background-image: url(&apos;project://database/Assets/Sprites/SMGIcon.png?fileID=2800000&amp;guid=ef69af96867a20d438c22f1b056ff9f5&amp;type=3#SMGIcon&apos;); width: 171px; height: 125px; margin-top: -30px; margin-bottom: -22px; display: none;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Damage" picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Sprites/Damage.png?fileID=2800000&amp;guid=ed82d3d65bddfd6408b55556ac5d8f7f&amp;type=3#Damage&apos;); -unity-background-image-tint-color: rgb(140, 0, 0); opacity: 0;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="DeathScreen" style="width: 100%; height: 100%; display: none; position: absolute;">
+        <ui:VisualElement style="top: 40%; bottom: 40%; background-color: rgb(12, 12, 12); align-items: center; justify-content: space-around;">
+            <ui:Label text="They defeated your physical form. But their destiny is inevitable." display-tooltip-when-elided="true" style="color: rgb(236, 236, 236); font-size: 20px; -unity-font-definition: url(&apos;project://database/Assets/Sprites/Retron2000%20SDF%201.asset?fileID=11400000&amp;guid=89ab27c54499e254ca29704f71140cc0&amp;type=2#Retron2000 SDF 1&apos;); margin-top: 10px; margin-bottom: 10px;" />
+            <ui:Button text="Materialze new body and shed their blood" display-tooltip-when-elided="true" name="RespawnButton" style="font-size: 20px; -unity-font-definition: url(&apos;project://database/Assets/Sprites/Retron2000%20SDF%201.asset?fileID=11400000&amp;guid=89ab27c54499e254ca29704f71140cc0&amp;type=2#Retron2000 SDF 1&apos;); margin-top: 10px; margin-bottom: 10px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
