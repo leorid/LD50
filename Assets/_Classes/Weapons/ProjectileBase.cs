@@ -11,6 +11,7 @@ namespace JL
 
 		public object sender;
 		public float maxLifetime = 20;
+		public int damage = 1;
 		public GameObject impactEffectWall;
 		public GameObject impactEffectBlood;
 		public CinemachineImpulseSource impulseSource;

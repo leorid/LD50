@@ -526,10 +526,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154acf19779b58e4e86ce7f3082febac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
-  detectRange: 15
+  health: 3
+  detectRange: 40
   wantedFireDistance: {x: 4, y: 6}
-  fireRange: 8
+  fireRange: 16
   lookRotSpeed: 500
   acceleration: 10
   moveSpeed: 3
@@ -539,11 +539,12 @@ MonoBehaviour:
   weaponController: {fileID: 5420807061371054822}
   mask:
     serializedVersion: 2
-    m_Bits: 115
+    m_Bits: 243
   fireRate: 0.5
   playerSpotted: 0
   inDetectionRange: 0
   inFireRange: 0
+  isOnScreen: 0
 --- !u!114 &5420807061371054822 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8954068712436576165, guid: 3aab1b8daceb2c747bbb386b7df9d7d6,

@@ -24,6 +24,7 @@ namespace JL
 
 		Vector2 moveVec;
 		Vector2 wantedRotation;
+		Camera cam;
 
 		public float fireRate = 0.5f;
 		float lastFireTime;
@@ -32,38 +33,52 @@ namespace JL
 		[SerializeField] bool playerSpotted;
 		[SerializeField] bool inDetectionRange;
 		[SerializeField] bool inFireRange;
+		[SerializeField] bool isOnScreen;
+
+		List<Collider2D> _colliders = new List<Collider2D>();
+
 
 		void Awake()
 		{
 			_rb = GetComponent<Rigidbody2D>();
+			GetComponentsInChildren(_colliders);
 		}
 
 		void Update()
 		{
-			moveVec = Vector2.zero;
+			if (!cam) cam = Camera.main;
 
+			moveVec = Vector2.zero;
 			Vector2 vec = GlobalGameVariables.playerPos - (Vector2)transform.position;
+
+			bool seeingPlayer = false;
+			RaycastHit2D hit;
+			SetCollidersEnabled(false);
+			{
+				hit = Physics2D.Raycast(transform.position,
+						vec,
+						playerDst,
+						mask);
+			}
+			SetCollidersEnabled(true);
+			if (hit.collider && hit.collider.CompareTag("Player"))
+			{
+				seeingPlayer = true;
+			}
+
 			playerDst = vec.magnitude;
 			CheckRange();
 			if (!playerSpotted)
 			{
-				if (inDetectionRange)
+				if (inDetectionRange && seeingPlayer)
 				{
-					RaycastHit2D hit =
-						Physics2D.Raycast(transform.position,
-							vec,
-							playerDst,
-							mask);
-					if (hit.collider && hit.collider.CompareTag("Player"))
-					{
-						playerSpotted = true;
-					}
+					playerSpotted = true;
 				}
 				lastFireTime = Time.time;
 			}
 			else
 			{
-				if (inFireRange && Time.time - lastFireTime > fireRate)
+				if (inFireRange && Time.time - lastFireTime > fireRate && seeingPlayer)
 				{
 					lastFireTime = Time.time;
 					WeaponInput weaponInput = new WeaponInput()
@@ -79,7 +94,7 @@ namespace JL
 				{
 					moveVec = -vec.normalized;
 				}
-				else if(playerDst > wantedFireDistance.y)
+				else if (playerDst > wantedFireDistance.y)
 				{
 					moveVec = vec.normalized;
 				}
@@ -94,8 +109,25 @@ namespace JL
 
 		void CheckRange()
 		{
-			inDetectionRange = playerDst < detectRange;
-			inFireRange = playerDst < fireRange;
+			if (!cam) return;
+
+			isOnScreen = false;
+			Vector2 camSpace = cam.WorldToViewportPoint(transform.position);
+			if (camSpace.x < 1 && camSpace.x > 0 && camSpace.y < 1 && camSpace.y > 0)
+			{
+				isOnScreen = true;
+			}
+			//inDetectionRange = playerDst < detectRange;
+			inDetectionRange = isOnScreen;
+			inFireRange = playerDst < fireRange && isOnScreen;
+		}
+
+		void SetCollidersEnabled(bool enable)
+		{
+			foreach (var col in _colliders)
+			{
+				col.enabled = enable;
+			}
 		}
 
 		void FixedUpdate()
@@ -126,9 +158,9 @@ namespace JL
 				  rotationSpeed * Time.fixedDeltaTime);
 		}
 
-		public void Damage(int dmg)
+		public void Damage(DamageInfo damageInfo)
 		{
-			health -= dmg;
+			health -= damageInfo.damage;
 			if (health <= 0)
 			{
 				// die

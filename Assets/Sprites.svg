@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="5.6568543"
-     inkscape:cx="-45.873552"
-     inkscape:cy="17.67767"
+     inkscape:zoom="8"
+     inkscape:cx="40.0625"
+     inkscape:cy="61.625"
      inkscape:window-width="3840"
      inkscape:window-height="2097"
      inkscape:window-x="-8"
@@ -34,6 +34,11 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3081"
+       is_visible="true"
+       lpeversion="1" />
     <inkscape:path-effect
        effect="spiro"
        id="path-effect4430"
@@ -510,8 +515,8 @@
     <ellipse
        style="fill:#ff0000;stroke:none;stroke-width:1;stop-color:#000000"
        id="ellipse4456"
-       cx="-180.48091"
-       cy="-35.029232"
+       cx="-180.75742"
+       cy="-34.253181"
        rx="0.22484455"
        ry="0.29154801"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
@@ -532,8 +537,8 @@
     <ellipse
        style="fill:#ff0000;stroke:none;stroke-width:1;stop-color:#000000"
        id="ellipse4460"
-       cx="-183.08653"
-       cy="-36.446117"
+       cx="-183.04486"
+       cy="-35.295242"
        rx="0.21413767"
        ry="0.39756548"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
@@ -543,8 +548,8 @@
     <ellipse
        style="fill:#ff0000;stroke:none;stroke-width:1;stop-color:#000000"
        id="ellipse4462"
-       cx="-179.25598"
-       cy="-33.690865"
+       cx="-179.99736"
+       cy="-33.068817"
        rx="0.14989637"
        ry="0.22528709"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
@@ -579,22 +584,22 @@
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
-    <path
-       id="path941"
-       style="fill:#ffffff;stroke-width:3.77953;stop-color:#000000"
-       d="M 27.992188 27.386719 A 10.045458 25.716374 0 0 0 24.378906 47.09375 A 10.045458 25.716374 0 0 0 28.617188 68.0625 L 40.228516 68.0625 A 10.045458 25.716374 0 0 0 44.46875 47.09375 A 10.045458 25.716374 0 0 0 42.445312 31.623047 L 27.992188 27.386719 z "
-       transform="matrix(0.26458333,0,0,0.26458333,55.892738,150.03093)"
-       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
-       inkscape:export-xdpi="135"
-       inkscape:export-ydpi="135" />
     <rect
-       style="fill:#ffffff;stroke:none;stroke-width:0.999999;stop-color:#000000"
+       style="fill:#ffd5d5;stroke:none;stroke-width:0.999999;stop-color:#000000"
        id="rect4877"
        width="1.8124214"
        height="1.6954911"
        x="105.28326"
        y="132.66817"
        transform="rotate(15.867253)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <path
+       id="path941"
+       style="fill:#ffffff;stroke-width:3.77953;stop-color:#000000"
+       d="M 27.992188 27.386719 A 10.045458 25.716374 0 0 0 24.378906 47.09375 A 10.045458 25.716374 0 0 0 28.617188 68.0625 L 40.228516 68.0625 A 10.045458 25.716374 0 0 0 44.46875 47.09375 A 10.045458 25.716374 0 0 0 42.445312 31.623047 L 27.992188 27.386719 z "
+       transform="matrix(0.26458333,0,0,0.26458333,55.892738,150.03093)"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
@@ -642,7 +647,7 @@
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
     <ellipse
-       style="fill:#ffffff;stroke-width:0.999999;stop-color:#000000"
+       style="fill:#ffd5d5;stroke-width:0.999999;stop-color:#000000"
        id="path868"
        cx="66.170036"
        cy="154.00145"
@@ -653,66 +658,67 @@
        inkscape:export-ydpi="135" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 64.265958,153.17775 c 0.02552,0.18059 0.06795,0.35879 0.126548,0.5315 0.02518,0.0742 0.05333,0.1474 0.08437,0.21935"
+       d="m 64.289344,152.57556 c 0.02552,0.18059 0.06795,0.35879 0.126548,0.5315 0.02518,0.0742 0.05333,0.1474 0.08437,0.21935"
        id="path903"
        inkscape:path-effect="#path-effect905"
-       inkscape:original-d="m 64.265958,153.17775 c -0.02469,0.18909 0.05956,0.36144 0.126548,0.5315 0.121004,0.30717 -0.0034,0.0219 0.08437,0.21935"
+       inkscape:original-d="m 64.289344,152.57556 c -0.02469,0.18909 0.05956,0.36144 0.126548,0.5315 0.121004,0.30717 -0.0034,0.0219 0.08437,0.21935"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 64.907133,153.47303 c -0.243099,0.0393 -0.481524,0.10737 -0.708666,0.20247 -0.03715,0.0155 -0.07403,0.0318 -0.109676,0.0506 -0.02903,0.0153 -0.05721,0.0322 -0.08436,0.0506"
+       d="m 64.930519,152.87084 c -0.243099,0.0393 -0.481524,0.10737 -0.708666,0.20247 -0.03715,0.0156 -0.07403,0.0318 -0.109676,0.0506 -0.02903,0.0153 -0.05721,0.0322 -0.08436,0.0506"
        id="path907"
        inkscape:path-effect="#path-effect909"
-       inkscape:original-d="m 64.907133,153.47303 c -0.2471,0.027 -0.482069,0.10334 -0.708666,0.20247 -0.03688,0.0162 -0.07404,0.0319 -0.109676,0.0506 -0.02811,0.0148 -0.05765,0.0506 -0.08436,0.0506"
+       inkscape:original-d="m 64.930519,152.87084 c -0.2471,0.027 -0.482069,0.10334 -0.708666,0.20247 -0.03688,0.0162 -0.07404,0.0319 -0.109676,0.0506 -0.02811,0.0148 -0.05765,0.0506 -0.08436,0.0506"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 66.256977,153.81049 c 0.03123,0.14182 0.102098,0.2747 0.202474,0.37964 0.0082,0.009 0.01668,0.0171 0.02531,0.0253 0.0028,-2.7e-4 0.0056,-2.7e-4 0.0084,0 0.01264,0.001 0.02435,0.008 0.03287,0.0175 0.0085,0.009 0.01403,0.0212 0.01738,0.0335 0.0067,0.0245 0.0051,0.0504 0.0088,0.0756 0.0056,0.038 0.02359,0.074 0.05062,0.10123"
+       d="m 66.256977,153.28132 c 0.03123,0.14182 0.102098,0.2747 0.202474,0.37964 0.0082,0.009 0.01668,0.0171 0.02531,0.0253 0.0028,-2.7e-4 0.0056,-2.7e-4 0.0084,0 0.01264,0.001 0.02435,0.008 0.03287,0.0175 0.0085,0.009 0.01403,0.0212 0.01738,0.0335 0.0067,0.0245 0.0051,0.0504 0.0088,0.0756 0.0056,0.038 0.02359,0.074 0.05062,0.10123"
        id="path911"
        inkscape:path-effect="#path-effect913"
-       inkscape:original-d="m 66.256977,153.81049 c 0.009,0.1507 0.108067,0.27175 0.202474,0.37964 0.0079,0.009 0.01577,0.0182 0.02531,0.0253 0.0022,0.002 0.0071,-0.002 0.0084,0 0.02309,0.0404 0.03824,0.0849 0.05906,0.12655 0.0099,0.0198 0.05062,0.0769 0.05062,0.10123"
+       inkscape:original-d="m 66.256977,153.28132 c 0.009,0.1507 0.108067,0.27175 0.202474,0.37964 0.0079,0.009 0.01577,0.0182 0.02531,0.0253 0.0022,0.002 0.0071,-0.002 0.0084,0 0.02309,0.0404 0.03824,0.0849 0.05906,0.12655 0.0099,0.0198 0.05062,0.0769 0.05062,0.10123"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 66.872841,153.92017 c -0.01146,0.005 -0.02272,0.0108 -0.03375,0.0169 -0.04653,0.0255 -0.08874,0.0583 -0.134985,0.0844 -0.0702,0.0395 -0.148508,0.0628 -0.219347,0.10124 -0.03775,0.0205 -0.07309,0.045 -0.109676,0.0675 -0.07415,0.0455 -0.153595,0.0824 -0.236222,0.10968"
+       d="m 66.872841,153.391 c -0.01146,0.005 -0.02272,0.0108 -0.03375,0.0169 -0.04653,0.0255 -0.08874,0.0583 -0.134985,0.0844 -0.0702,0.0395 -0.148508,0.0628 -0.219347,0.10124 -0.03775,0.0205 -0.07309,0.045 -0.109676,0.0675 -0.07415,0.0455 -0.153595,0.0824 -0.236222,0.10968"
        id="path915"
        inkscape:path-effect="#path-effect917"
-       inkscape:original-d="m 66.872841,153.92017 c -0.01125,0.006 -0.02296,0.0104 -0.03375,0.0169 -0.0455,0.0273 -0.0884,0.059 -0.134985,0.0844 -0.0707,0.0386 -0.148652,0.0627 -0.219347,0.10124 -0.03768,0.0206 -0.07128,0.0483 -0.109676,0.0675 -0.08755,0.0438 -0.168762,0.0422 -0.236222,0.10968"
+       inkscape:original-d="m 66.872841,153.391 c -0.01125,0.006 -0.02296,0.0104 -0.03375,0.0169 -0.0455,0.0273 -0.0884,0.059 -0.134985,0.0844 -0.0707,0.0386 -0.148652,0.0627 -0.219347,0.10124 -0.03768,0.0206 -0.07128,0.0483 -0.109676,0.0675 -0.08755,0.0438 -0.168762,0.0422 -0.236222,0.10968"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
     <ellipse
        style="fill:#ffffff;stroke-width:1;stop-color:#000000"
        id="path943"
-       cx="176.99774"
-       cy="29.131527"
+       cx="164.30827"
+       cy="74.718933"
        rx="0.93556696"
        ry="4.5077319"
-       transform="rotate(60.721344)"
+       transform="rotate(45.312859)"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
     <ellipse
        style="fill:#ffffff;stroke-width:1;stop-color:#000000"
        id="ellipse1025"
-       cx="66.340202"
-       cy="170.86855"
+       cx="50.793938"
+       cy="176.08133"
        rx="0.93556696"
        ry="4.5077319"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
-       inkscape:export-ydpi="135" />
+       inkscape:export-ydpi="135"
+       transform="rotate(-5.0430547)" />
     <ellipse
        style="fill:#ffffff;stroke-width:1;stop-color:#000000"
        id="ellipse1027"
-       cx="67.658386"
-       cy="170.80428"
+       cx="69.248474"
+       cy="172.20108"
        rx="0.93556696"
        ry="4.5077319"
        transform="rotate(3.3859457)"
@@ -720,13 +726,13 @@
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
     <ellipse
-       style="fill:#ffffff;stroke-width:1;stop-color:#000000"
+       style="fill:#ffffff;stroke-width:1.00121;stop-color:#000000"
        id="ellipse1131"
-       cx="17.393116"
-       cy="189.8343"
-       rx="0.93556696"
-       ry="4.5077319"
-       transform="rotate(-15.403351)"
+       cx="23.668337"
+       cy="190.81"
+       rx="0.82581222"
+       ry="4.4697866"
+       transform="matrix(0.95365135,-0.30091379,0.23388525,0.97226421,0,0)"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
@@ -760,14 +766,35 @@
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
+    <rect
+       style="fill:#ffffff;stroke-width:1;stop-color:#000000"
+       id="rect2152"
+       width="1.1926903"
+       height="1.1693041"
+       x="163.34412"
+       y="78.859573"
+       transform="rotate(45)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
     <ellipse
        style="fill:#000000;stroke-width:1;stop-color:#000000"
        id="path2633"
-       cx="-88.216873"
-       cy="156.6221"
+       cx="-88.320763"
+       cy="158.73602"
        rx="0.81239349"
        ry="0.42581379"
        transform="rotate(-48.130109)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <rect
+       style="fill:#ffffff;stroke-width:0.999996;stop-color:#000000"
+       id="rect2336"
+       width="1.1056031"
+       height="1.2933276"
+       x="65.892693"
+       y="174.04018"
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
@@ -801,14 +828,6 @@
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
        inkscape:export-xdpi="135"
        inkscape:export-ydpi="135" />
-    <path
-       id="ellipse3051"
-       style="fill:#000000;stroke-width:0.999999;stop-color:#000000"
-       d="m 65.843218,149.9879 c -2.150339,0.0537 -2.847907,1.10866 -3.541612,2.22028 2.660228,-0.35544 3.705188,0.40863 5.56229,1.26941 0.983567,1.15986 -1.225814,2.46357 -1.030956,3.18733 0.25981,0.74232 2.775229,0.52177 2.775229,0.52177 0.593981,-0.81214 0.94544,-1.88138 0.94544,-2.16009 -1.71e-4,-3.00891 -2.01104,-5.03868 -4.710395,-5.0387 z"
-       sodipodi:nodetypes="cccccccc"
-       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
-       inkscape:export-xdpi="135"
-       inkscape:export-ydpi="135" />
     <rect
        style="fill:#000000;stroke:none;stroke-width:1.00016;stop-color:#000000"
        id="rect4302"
@@ -830,6 +849,273 @@
        inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\WhiteSquare.png"
        inkscape:export-xdpi="80.827225"
        inkscape:export-ydpi="80.827225" />
+    <rect
+       style="fill:#1a1a1a;stroke-width:1;stop-color:#000000"
+       id="rect1055"
+       width="1.8355469"
+       height="3.4643879"
+       x="57.976334"
+       y="177.10938"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <path
+       id="rect1057"
+       style="fill:#1a1a1a;stop-color:#000000"
+       d="m 56.53766,180.5407 c 0.587044,-0.42168 3.26595,-0.28939 3.26595,-0.28939 v 1.26504 h -3.555338 c 0,0 -0.157096,-0.58705 0.289388,-0.97565 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <rect
+       style="fill:#1a1a1a;stroke-width:1.00101;stop-color:#000000"
+       id="rect1059"
+       width="1.8460532"
+       height="4.1633773"
+       x="13.01992"
+       y="189.98463"
+       transform="matrix(0.9750968,-0.2217797,0.28319705,0.95906175,0,0)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <path
+       id="rect1141"
+       style="fill:#1a1a1a;stroke-width:0.999997;stop-color:#000000"
+       d="m 65.852844,182.59849 c 0.423831,-0.578 2.682044,-0.9532 2.682044,-0.9532 l 0.402176,1.36738 -2.834151,0.664 c 0,0 -0.672554,-0.3979 -0.250066,-1.07818 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <rect
+       style="fill:#000000;stroke-width:1.00067;stop-color:#000000"
+       id="rect2542"
+       width="1.4649667"
+       height="0.67755103"
+       x="140.6799"
+       y="100.74126"
+       transform="matrix(0.81037906,0.58590595,-0.54306396,0.83969133,0,0)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <rect
+       style="fill:#000000;stroke-width:1.0008;stop-color:#000000"
+       id="rect2544"
+       width="0.77725947"
+       height="3.2154462"
+       x="146.82118"
+       y="109.68479"
+       transform="matrix(0.84507932,0.53464095,-0.58143294,0.81359433,0,0)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:1;stop-color:#000000"
+       id="path2774"
+       cx="71.742081"
+       cy="170.81183"
+       rx="0.7316525"
+       ry="1.0153972"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:0.999999;stop-color:#000000"
+       id="ellipse2856"
+       cx="71.257088"
+       cy="171.31001"
+       rx="0.17653354"
+       ry="0.72956151"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:0.999999;stop-color:#000000"
+       id="ellipse2858"
+       cx="71.580414"
+       cy="171.408"
+       rx="0.17653354"
+       ry="0.72956151"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:0.999999;stop-color:#000000"
+       id="ellipse2860"
+       cx="71.969963"
+       cy="171.49513"
+       rx="0.17653354"
+       ry="0.72956151"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:0.999999;stop-color:#000000"
+       id="ellipse2862"
+       cx="72.347847"
+       cy="171.38081"
+       rx="0.17653354"
+       ry="0.72956151"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:1.02783;stop-color:#000000"
+       id="ellipse2864"
+       cx="168.27153"
+       cy="39.632286"
+       rx="0.21615188"
+       ry="0.62946707"
+       transform="matrix(0.56367112,0.82599932,-0.60010682,0.79991987,0,0)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <rect
+       style="fill:#000000;stroke-width:0.999994;stop-color:#000000"
+       id="rect2648"
+       width="1.3185815"
+       height="0.5646804"
+       x="71.111656"
+       y="169.69267"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:1.00048;stop-color:#000000"
+       id="ellipse2866"
+       cx="33.129654"
+       cy="174.95569"
+       rx="0.77780646"
+       ry="1.0840403"
+       transform="matrix(-0.88029962,0.47441815,0.51262125,0.85861484,0,0)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:1.00048;stop-color:#000000"
+       id="ellipse2868"
+       cx="32.614063"
+       cy="175.48755"
+       rx="0.18766961"
+       ry="0.77888149"
+       transform="matrix(-0.88029962,0.47441815,0.51262125,0.85861484,0,0)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:1.00048;stop-color:#000000"
+       id="ellipse2870"
+       cx="32.95779"
+       cy="175.59216"
+       rx="0.18766961"
+       ry="0.77888149"
+       transform="matrix(-0.88029962,0.47441815,0.51262125,0.85861484,0,0)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:1.00048;stop-color:#000000"
+       id="ellipse2872"
+       cx="33.371914"
+       cy="175.68518"
+       rx="0.18766961"
+       ry="0.77888149"
+       transform="matrix(-0.88029962,0.47441815,0.51262125,0.85861484,0,0)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:1.00048;stop-color:#000000"
+       id="ellipse2874"
+       cx="33.773632"
+       cy="175.56314"
+       rx="0.18766961"
+       ry="0.77888149"
+       transform="matrix(-0.88029962,0.47441815,0.51262125,0.85861484,0,0)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:1.02892;stop-color:#000000"
+       id="ellipse2876"
+       cx="135.30823"
+       cy="77.165901"
+       rx="0.22570024"
+       ry="0.68498057"
+       transform="matrix(-0.07225937,0.99738588,0.91838162,0.39569584,0,0)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <rect
+       style="fill:#000000;stroke-width:0.999994;stop-color:#000000"
+       id="rect2648-6"
+       width="1.3185815"
+       height="0.5646804"
+       x="-76.730133"
+       y="158.13252"
+       transform="rotate(-45.592701)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <path
+       id="ellipse3026"
+       style="fill:#ffffff;stroke-width:3.77952;stop-color:#000000"
+       d="M 27.533203 11.751953 C 27.36461 11.749426 27.205208 11.763071 27.054688 11.792969 A 12.244233 11.989144 0 0 0 26.599609 15.005859 A 12.244233 11.989144 0 0 0 38.84375 26.996094 A 12.244233 11.989144 0 0 0 49.554688 20.802734 C 47.15686 20.696767 44.738475 20.610689 43.244141 19.623047 C 41.050166 18.172993 40.32532 15.754634 36.658203 15.269531 C 34.079762 14.928417 29.942057 11.788059 27.533203 11.751953 z "
+       transform="matrix(0.26458333,0,0,0.26458333,55.892738,150.03093)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <path
+       id="ellipse3051"
+       style="fill:#000000;stroke-width:0.999999;stop-color:#000000"
+       d="m 65.843218,149.9879 c -2.150339,0.0537 -2.847907,1.10866 -3.541612,2.22028 2.660228,-0.35544 3.705188,0.40863 5.56229,1.26941 0.983567,1.15986 -1.225814,2.46357 -1.030956,3.18733 0.25981,0.74232 2.775229,0.52177 2.775229,0.52177 0.593981,-0.81214 0.94544,-1.88138 0.94544,-2.16009 -1.71e-4,-3.00891 -2.01104,-5.03868 -4.710395,-5.0387 z"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <rect
+       style="fill:#000000;stroke-width:0.999995;stop-color:#000000"
+       id="rect3210"
+       width="1.2399513"
+       height="0.28230837"
+       x="87.060959"
+       y="145.78078"
+       transform="rotate(11.44365)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <rect
+       style="fill:#000000;stroke-width:0.999995;stop-color:#000000"
+       id="rect3292"
+       width="1.2399513"
+       height="0.28230837"
+       x="64.247185"
+       y="166.92606"
+       transform="rotate(-2.3671215)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <rect
+       style="fill:#000000;stroke-width:0.999995;stop-color:#000000"
+       id="rect3294"
+       width="1.2399513"
+       height="0.28230837"
+       x="163.70056"
+       y="78.547569"
+       transform="rotate(45.26199)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
+    <rect
+       style="fill:#000000;stroke-width:1.00003;stop-color:#000000"
+       id="rect3296"
+       width="0.96023971"
+       height="0.28228375"
+       x="63.254147"
+       y="176.22136"
+       transform="matrix(0.9996369,-0.02694568,0.01615898,0.99986944,0,0)"
+       inkscape:export-filename="C:\Users\leori\Documents\UNITY_PROJECTS\LD50\Assets\Sprites\DeadEnemy.png"
+       inkscape:export-xdpi="135"
+       inkscape:export-ydpi="135" />
   </g>
   <g
      inkscape:groupmode="layer"

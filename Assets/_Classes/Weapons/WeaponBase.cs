@@ -8,13 +8,18 @@ namespace JL
 	public abstract class WeaponBase : MonoBehaviour
 	{
 		public GameObject projectile;
+		public int damage = 1;
 		protected CinemachineImpulseSource impulseSource;
 		public float shootImpulse = 0.05f;
 		protected Rigidbody2D playerRB;
 		public Transform muzzlePos;
+		[HideInInspector]
 		public WeaponController weaponController;
 
-		protected virtual void Awake()
+		public float fireRate = 0.1f;
+		float lastFireTime = 0;
+
+		public virtual void Init()
 		{
 			impulseSource = GetComponentInParent<CinemachineImpulseSource>();
 			playerRB = GetComponentInParent<Rigidbody2D>();
@@ -32,10 +37,13 @@ namespace JL
 		{
 			//impulseSource.GenerateImpulseAt(transform.position,
 			//-transform.up * shootImpulse);
+			if (Time.time - lastFireTime >= fireRate)
+			{
+				lastFireTime = Time.time;
 
-			playerRB.AddForce(-transform.up * shootImpulse, ForceMode2D.Impulse);
-
-			FireInternal();
+				playerRB.AddForce(-transform.up * shootImpulse, ForceMode2D.Impulse);
+				FireInternal();
+			}
 		}
 		protected abstract void FireInternal();
 
@@ -45,9 +53,11 @@ namespace JL
 				muzzlePos.position,
 				muzzlePos.rotation,
 				HolderManager.Get(projectile));
+			instance.transform.up = direction;
 			ProjectileBase projectileClass = instance.GetComponent<ProjectileBase>();
 			projectileClass.sender = this;
 			projectileClass.mask = weaponController.mask;
+			projectileClass.damage = damage;
 		}
 	}
 
