@@ -16,7 +16,7 @@ namespace JL
 			uiDocument = GetComponentInParent<UIDocument>();
 			VisualElement weaponIconRoot = uiDocument.rootVisualElement.Q("WeaponIcon");
 			weaponIcons.AddRange(weaponIconRoot.Children());
-			Debug.Log("weaponIcons.Count " + weaponIcons.Count);
+			//Debug.Log("weaponIcons.Count " + weaponIcons.Count);
 		}
 
 		public static void SetWeaponIcon(int weaponIndex)
@@ -27,6 +27,14 @@ namespace JL
 				weaponIcons[i].style.display =
 					draw ? DisplayStyle.Flex : DisplayStyle.None;
 			}
+		}
+
+
+		[RuntimeInitializeOnLoadMethod(
+			RuntimeInitializeLoadType.SubsystemRegistration)]
+		static void DomainReload()
+		{
+			weaponIcons.Clear();
 		}
 	}
 }
