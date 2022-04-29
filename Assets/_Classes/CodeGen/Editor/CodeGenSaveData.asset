@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ae4d8d741c37a4b9be3c0b540c1a79, type: 3}
+  m_Name: CodeGenSaveData
+  m_EditorClassIdentifier: 
+  templates:
+  - name: EvtGlobalSubscribe
+    templateString: "public static void Subscribe<T1>(object sender, string eventName,
+      Action<T1> action)\r\n{\r\n\tList<MessageBase> list = GetOrCreateList(eventName);\r\n\tMessage<T1>
+      message = GenericPool<Message<T1>>.Get();\r\n\tmessage.Init(action);\r\n\tlist.Add(message);\r\n}"
+    replacers:
+    - name: <T1>
+      existing: <T1>
+      replacements:
+      - <T1>
+      - <T1, T2>
+      - <T1, T2, T3>
+  - name: Message
+    templateString: "public class Message<T1> : MessageBase\r\n{\r\n\tAction<T1>
+      _action;\r\n\tpublic override Delegate Delegate => _action;\r\n\r\n\tpublic
+      void Init(Action<T1> action)\r\n\t{\r\n\t\t_action = action;\r\n\t}\r\n\tpublic
+      void Invoke(T1 arg1)\r\n\t{\r\n\t\t_action.Invoke(YOLOarg1);\r\n\t}\r\n\tpublic
+      override bool HasSameAction(object action)\r\n\t{\r\n\t\treturn _action.Equals(action);\r\n\t}\r\n}"
+    replacers:
+    - name: <T1>
+      existing: <T1>
+      replacements:
+      - <T1>
+      - <T1, T2>
+      - <T1, T2, T3>
+    - name: T1 arg1
+      existing: T1 arg1
+      replacements:
+      - T1 arg1
+      - T1 arg1, T2 arg2
+      - T1 arg1, T2 arg2, T3 arg3
+    - name: arg1
+      existing: YOLOarg1
+      replacements:
+      - arg1
+      - arg1, arg2
+      - arg1, arg2, arg3
+  - name: EvtGlobalUnsubscribe
+    templateString: "public static void UnSubscribe<T1>(object sender, string eventName,
+      Action<T1> action)\r\n{\r\n\tList<MessageBase> list = TryGetList(eventName);\r\n\r\n\tforeach
+      (MessageBase message in list)\r\n\t{\r\n\t\tif (message.HasSameAction(action))\r\n\t\t{\r\n\t\t\tlist.Remove(message);\r\n\t\t\tbreak;\r\n\t\t}\r\n\t}\r\n\tCheckRemoveList(eventName,
+      list);\r\n}"
+    replacers:
+    - name: <T1>
+      existing: <T1>
+      replacements:
+      - <T1>
+      - <T1, T2>
+      - <T1, T2, T3>
+  - name: EvtGlobalExecute
+    templateString: "public static void Execute<T1>(object sender, string eventName,
+      T1 arg1)\r\n{\r\n\tList<MessageBase> list;\r\n\tif (!_globalEvents.TryGetValue(eventName,
+      out list)) return;\r\n\r\n\tforeach (Message<T1> action in list)\r\n\t{\r\n\t\taction.Invoke(AAAarg1);\r\n\t}\r\n}"
+    replacers:
+    - name: <T1>
+      existing: <T1>
+      replacements:
+      - <T1>
+      - <T1, T2>
+      - <T1, T2, T3>
+    - name: T1 arg1
+      existing: T1 arg1
+      replacements:
+      - T1 arg1
+      - T1 arg1, T2 arg2
+      - T1 arg1, T2 arg2, T3 arg3
+    - name: arg1
+      existing: AAAarg1
+      replacements:
+      - arg1
+      - arg1, arg2
+      - arg1, arg2, arg3
+  - name: EvtLocalSubscribe
+    templateString: "public static void Subscribe<T1>(object sender, GameObject receiver,\r\n\tstring
+      eventName, Action<T1> action)\r\n\t=> Subscribe(sender, receiver as object,
+      eventName, action);\r\npublic static void Subscribe<T1>(object sender, ScriptableObject
+      receiver,\r\n\tstring eventName, Action<T1> action)\r\n\t=> Subscribe(sender,
+      receiver as object, eventName, action);\r\nstatic void Subscribe<T1>(object
+      sender, object receiver,\r\n\tstring eventName, Action<T1> action)\r\n{\r\n\tList<MessageBase>
+      list = GetOrCreateList(receiver, eventName);\r\n\tMessage<T1> evt = GenericPool<Message<T1>>.Get();\r\n\tevt.Init(action);\r\n\tlist.Add(evt);\r\n}"
+    replacers:
+    - name: <T1>
+      existing: <T1>
+      replacements:
+      - <T1>
+      - <T1, T2>
+      - <T1, T2, T3>
+  - name: EvtLocalUnsubscribe
+    templateString: "public static void UnSubscribe<T1>(object sender, GameObject
+      receiver,\r\n\tstring eventName, Action<T1> action)\r\n\t=> UnSubscribe(sender,
+      receiver as object, eventName, action);\r\npublic static void UnSubscribe<T1>(object
+      sender, ScriptableObject receiver,\r\n\tstring eventName, Action<T1> action)\r\n\t=>
+      UnSubscribe(sender, receiver as object, eventName, action);\r\nstatic void
+      UnSubscribe<T1>(object sender, object receiver,\r\n\tstring eventName, Action<T1>
+      action)\r\n{\r\n\tif (TryGetList(receiver, eventName, out List<MessageBase>
+      list))\r\n\t{\r\n\t\tforeach (MessageBase message in list)\r\n\t\t{\r\n\t\t\tif
+      (message.HasSameAction(action))\r\n\t\t\t{\r\n\t\t\t\tlist.Remove(message);\r\n\t\t\t\tGenericPool<Message<T1>>.Release(message
+      as Message<T1>);\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t\tCheckRemoveList(receiver,
+      eventName, list);\r\n\t}\r\n}"
+    replacers:
+    - name: <T1>
+      existing: <T1>
+      replacements:
+      - <T1>
+      - <T1, T2>
+      - <T1, T2, T3>
+  - name: EvtLocalExecute
+    templateString: "public static void Execute<T1>(object sender, GameObject receiver,
+      string eventName, T1 arg1)\r\n\t=> Execute(sender, receiver as object, eventName,
+      AAAarg1);\r\npublic static void Execute<T1>(object sender, ScriptableObject
+      receiver, string eventName, T1 arg1)\r\n\t=> Execute(sender, receiver as object,
+      eventName, AAAarg1);\r\nstatic void Execute<T1>(object sender, object receiver,
+      string eventName, T1 arg1)\r\n{\r\n\tif (TryGetList(receiver, eventName, out
+      List<MessageBase> list))\r\n\t{\r\n\t\tforeach (Message<T1> message in list)\r\n\t\t{\r\n\t\t\tmessage.Invoke(AAAarg1);\r\n\t\t}\r\n\t}\r\n}"
+    replacers:
+    - name: <T1>
+      existing: <T1>
+      replacements:
+      - <T1>
+      - <T1, T2>
+      - <T1, T2, T3>
+    - name: T1 arg1
+      existing: T1 arg1
+      replacements:
+      - T1 arg1
+      - T1 arg1, T2 arg2
+      - T1 arg1,T2 arg2,T3 arg3
+    - name: arg1
+      existing: AAAarg1
+      replacements:
+      - arg1
+      - arg1,arg2
+      - arg1,arg2,arg3
+  - name: HubEntryGlobal
+    templateString: "public class HubEntryGlobal<T1>\r\n{\r\n\tstring id;\r\n\tpublic
+      string ID => id;\r\n\r\n\tpublic void Subscribe(object sender, Action<T1> action)\r\n\t{\r\n\t\tEventHub.Global.Subscribe(sender,
+      id, action);\r\n\t}\r\n\tpublic void Unsubscribe(object sender, Action<T1>
+      action)\r\n\t{\r\n\t\tEventHub.Global.UnSubscribe(sender, id, action);\r\n\t}\r\n\tpublic
+      void Execute(object sender, T1 arg1)\r\n\t{\r\n\t\tEventHub.Global.Execute(sender,
+      id, AAAarg1);\r\n\t}\r\n}"
+    replacers:
+    - name: <T1>
+      existing: <T1>
+      replacements:
+      - <T1>
+      - <T1, T2>
+      - <T1, T2, T3>
+    - name: T1 arg1
+      existing: T1 arg1
+      replacements:
+      - T1 arg1
+      - T1 arg1,T2 arg2
+      - T1 arg1,T2 arg2,T3 arg3
+    - name: arg1
+      existing: AAAarg1
+      replacements:
+      - arg1
+      - arg1, arg2
+      - arg1,arg2,arg3
+  - name: HubEntryLocal
+    templateString: "public class HubEntryLocal<T1>\r\n{\r\n\tstring id;\r\n\tpublic
+      string ID => id;\r\n\r\n\tpublic void Subscribe(object sender, GameObject receiver,
+      Action<T1> action)\r\n\t{\r\n\t\tEventHub.Local.Subscribe(sender, receiver,
+      id, action);\r\n\t}\r\n\tpublic void Subscribe(object sender, ScriptableObject
+      receiver, Action<T1> action)\r\n\t{\r\n\t\tEventHub.Local.Subscribe(sender,
+      receiver, id, action);\r\n\t}\r\n\tpublic void Unsubscribe(object sender, GameObject
+      receiver, Action<T1> action)\r\n\t{\r\n\t\tEventHub.Local.UnSubscribe(sender,
+      receiver, id, action);\r\n\t}\r\n\tpublic void Unsubscribe(object sender, ScriptableObject
+      receiver, Action<T1> action)\r\n\t{\r\n\t\tEventHub.Local.UnSubscribe(sender,
+      receiver, id, action);\r\n\t}\r\n\tpublic void Execute(object sender, GameObject
+      receiver, T1 arg1)\r\n\t{\r\n\t\tEventHub.Local.Execute(sender, receiver, id,
+      AAAarg1);\r\n\t}\r\n\tpublic void Execute(object sender, ScriptableObject receiver,
+      T1 arg1)\r\n\t{\r\n\t\tEventHub.Local.Execute(sender, receiver, id, AAAarg1);\r\n\t}\r\n}"
+    replacers:
+    - name: <T1>
+      existing: <T1>
+      replacements:
+      - <T1>
+      - <T1, T2>
+      - <T1, T2, T3>
+    - name: T1 arg1
+      existing: T1 arg1
+      replacements:
+      - T1 arg1
+      - T1 arg1,T2 arg2
+      - T1 arg1,T2 arg2,T3 arg3
+    - name: arg1
+      existing: AAAarg1
+      replacements:
+      - arg1
+      - arg1, arg2
+      - arg1,arg2,arg3

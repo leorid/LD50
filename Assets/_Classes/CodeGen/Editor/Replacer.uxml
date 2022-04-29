@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Replacer" style="width: 200px;">
+        <ui:VisualElement style="flex-direction: row;">
+            <ui:VisualElement style="flex-grow: 1;" />
+            <ui:Button text="X" display-tooltip-when-elided="true" name="DeleteButton" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-direction: row;">
+            <ui:Label text="N" display-tooltip-when-elided="true" />
+            <ui:TextField picking-mode="Ignore" value="filler text" text="filler text" name="ReplacerName" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-direction: row;">
+            <ui:Label text="E" display-tooltip-when-elided="true" />
+            <ui:TextField picking-mode="Ignore" value="filler text" text="filler text" name="ReplacerExisting" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:ListView focusable="true" name="ListView" show-border="true" show-alternating-row-backgrounds="ContentOnly" show-foldout-header="true" header-title="Replacements" show-add-remove-footer="true" reorderable="true" reorder-mode="Animated" />
+    </ui:VisualElement>
+</ui:UXML>

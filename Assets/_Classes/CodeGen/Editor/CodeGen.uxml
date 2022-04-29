@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Replacer" src="project://database/Assets/_Classes/CodeGen/Editor/Replacer.uxml?fileID=9197481963319205126&amp;guid=20e7a6a2fbb42de41ad8acd2f95c2ddd&amp;type=3#Replacer" />
+    <ui:VisualElement name="Selection" style="flex-direction: row; flex-shrink: 0;">
+        <ui:Button text="Update" display-tooltip-when-elided="true" name="UpdateButton" />
+        <ui:Button text="Create New" display-tooltip-when-elided="true" name="CreateNewButton" />
+        <ui:DropdownField index="-1" choices="System.Collections.Generic.List`1[System.String]" name="ChooseExistingDropdown" style="min-width: 100px;" />
+    </ui:VisualElement>
+    <ui:TextField picking-mode="Ignore" label="Name" value="filler text" text="filler text" name="NameField" />
+    <ui:VisualElement style="flex-direction: row; flex-shrink: 0;">
+        <ui:Button text="Add Replacer" display-tooltip-when-elided="true" name="AddButton" />
+        <ui:Button text="Build" display-tooltip-when-elided="true" name="BuildButton" style="flex-grow: 1;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="ReplacerArea" style="min-height: 100px; flex-direction: row; flex-shrink: 0;">
+        <ui:Instance template="Replacer" name="Replacer" />
+    </ui:VisualElement>
+    <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" horizontal-scroller-visibility="Hidden" style="min-height: 100px;">
+        <ui:VisualElement name="InputOutputArea" style="min-height: 100px;">
+            <ui:TextField picking-mode="Ignore" value="filler text" text="filler text" name="Input" multiline="true" style="width: 100%; min-height: 200px; margin-top: 10px; flex-shrink: 1;" />
+            <ui:TextField picking-mode="Ignore" value="filler text" text="filler text" name="Output" multiline="true" style="width: 100%; min-height: 200px; margin-top: 10px; flex-shrink: 1;" />
+        </ui:VisualElement>
+    </ui:ScrollView>
+</ui:UXML>
