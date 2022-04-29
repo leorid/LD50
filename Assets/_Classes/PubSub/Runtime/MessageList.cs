@@ -29,6 +29,11 @@ namespace JL
 						 BindingFlags.NonPublic | BindingFlags.Instance);
 
 					object hubEntryObj = fieldInfo.GetValue(null);
+					if (hubEntryObj == null)
+					{
+						hubEntryObj = Activator.CreateInstance(hubEntryType);
+						fieldInfo.SetValue(null, hubEntryObj);
+					}
 					idField.SetValue(hubEntryObj, idString);
 				}
 			}
@@ -36,11 +41,11 @@ namespace JL
 
 		public static class Enemy
 		{
-			public static readonly HubEntryGlobal<float> detection = new();
+			public static readonly HubEntryGlobal<float> detection;
 		}
 		public static class UI
 		{
-			public static readonly HubEntryGlobal<float> something = new();
+			public static readonly HubEntryGlobal<float> something;
 		}
 	}
 
